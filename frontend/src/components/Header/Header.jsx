@@ -34,7 +34,10 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between">
           <div>
-            <img src={logo} alt="logo" />
+            <a href="/">
+              {" "}
+              <img src={logo} alt="logo" />
+            </a>
           </div>
           <div className="navigation" ref={menuRef}>
             <ul

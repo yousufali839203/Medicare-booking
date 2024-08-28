@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import signupImg from "../assets/images/signup.gif";
-import avatar from "../assets/images/doctor-img01.png";
 import uploadImageToCloudinary from "../utils/uploadCloudinary";
 import HashLoader from "react-spinners/HashLoader";
 import { toast } from "react-toastify";
@@ -26,6 +25,7 @@ const Signup = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    console.log(formData);
   };
 
   const handleFileInputChange = async (event) => {
@@ -35,7 +35,6 @@ const Signup = () => {
     setpreViewUrl(data.url);
     setSelectedFile(data.url);
     setFormData({ ...formData, photo: data.url });
-    //later we will use cloudinary to upload  images
   };
 
   const submitHandler = async (event) => {

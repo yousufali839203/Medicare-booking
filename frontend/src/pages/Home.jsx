@@ -16,29 +16,32 @@ import featureImg from "./../assets/images/feature-img.png";
 import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "../components/Faq/FaqList";
 import Testimonial from "../components/Testimonial/Testimonial";
-
+import Newhome from "./Newhome";
+import heroImg4 from "../assets/images/doctor3.jpg";
+import heroImg3 from "../assets/images/doctor2.png";
 const Home = () => {
   return (
     <>
       {/* ####### hero section #########  */}
-      <section className="hero_section pt-[10px] 2xl:h-[800px]">
+      <section className="hero_section text-white bg-gray-800 pt-[10px] 2xl:h-[800px]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
-            {/* ####### hero content ####### */}
             <div>
               <div className="lg:w-[570px]">
                 <h1 className="text-[36px]leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
-                  We help patients live healthy, longer life.
+                  Transforming Lives Through Better Health
                 </h1>
                 <p className="text_para">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Consequuntur, odit. Voluptatem quidem ea minima minus ratione,
-                  exercitationem eos est.
+                  We believe in a patient-centered approach, providing care that
+                  is both empathetic and effective.
                 </p>
 
-                <button className="btn">Request an Appointment</button>
+                <a href="/doctors">
+                  {" "}
+                  <button className="btn">Make an Appointment</button>
+                </a>
               </div>
-              {/* ======= hero counter ======== */}
+
               <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
                 <div>
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
@@ -66,19 +69,19 @@ const Home = () => {
               </div>
             </div>
 
-            {/* ======= hero counter ======== */}
             <div className="flex gap-[30px] justify-end">
               <div>
-                <img className="w-full" src={heroImg01} alt="" />
+                <img className="w-[80%]" src={heroImg4} alt="" />
               </div>
               <div className="mt-[30px]">
-                <img className="w-full mb-[30px]" src={heroImg02} alt="" />
-                <img src={heroImg03} className="w-full" alt="" />
+                <img className="w-[80%] mb-[30px]" src={heroImg3} alt="" />
+                <img src={heroImg03} className="w-[80%] rounded-xl" alt="" />
               </div>
             </div>
           </div>
         </div>
       </section>
+      {/* <Newhome /> */}
       {/* ####### hero section end #########  */}
       <section>
         <div className="container">

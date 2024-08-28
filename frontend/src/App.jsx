@@ -1,11 +1,11 @@
-import './App.css';
+import "./App.css";
 import Layout from "./Layout/Layout";
 function App() {
-  return <>
-    <Layout/>
-  </>
-   
+  return (
+    <>
+      <Layout />
+    </>
+  );
 }
 
-export default App
-// 2:10 a 98% charge
+export default App;
