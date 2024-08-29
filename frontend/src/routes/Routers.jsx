@@ -9,7 +9,9 @@ import MyAccount from "../Dashboard/user-account/MyAccount";
 import Dashboard from "../Dashboard/doctor-account/Dashboard";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
-import CheckoutSuccess from "../pages/checkoutSuccess";
+
+// import CheckoutSuccess from "../pages/checkoutSuccess";
+import CheckoutSuccess from "../pages/CheckoutSuccess";
 
 const Routers = () => {
   return (
