@@ -9,14 +9,14 @@ import authRoute from "./routes/auth.js";
 import dotenv from "dotenv";
 import bookingRoute from "./routes/booking.js";
 import testRoute from "./routes/test.js";
+
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-  
-  origin: "https://doctor-appointment-booking-mern.netlify.app",
+  origin: "*", // Allow all origins
 };
 
 // database
@@ -24,7 +24,6 @@ mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URL, {});
-
     console.log("MongoDB database connected");
   } catch (err) {
     console.error("MongoDB database connection failed", err);
@@ -32,9 +31,10 @@ const connectDB = async () => {
 };
 
 // middleware
-app.use(cors(corsOptions)); // Move this line up
+app.use(cors(corsOptions)); // Apply CORS middleware
 app.use(express.json());
 app.use(cookieParser());
+
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/doctors", doctorRoute);
