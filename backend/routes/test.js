@@ -4,8 +4,6 @@ const router = express.Router({ mergeParams: true });
 
 router
   .route("/") // Use route() instead of chaining get() and post()
-  .get((req, res) => {
-    res.send("Hello World");
-  });
+  .get(getAllReviews);
 
 export default router;
