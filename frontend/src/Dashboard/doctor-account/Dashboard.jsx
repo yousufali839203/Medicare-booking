@@ -8,7 +8,7 @@ import Tabs from "./Tabs";
 import starIcon from "../../assets/images/Star.png";
 import DoctorAbout from "./../../pages/Doctors/DoctorAbout";
 import Appointments from "./Appointments";
-import Profile from "./profile";
+import Profile from "./Profile";
 const Dashboard = () => {
   const { data, loading, error } = useGetProfile(
     `${BASE_URL}/doctors/profile/me`
