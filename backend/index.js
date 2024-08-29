@@ -15,7 +15,8 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-  origin: true,
+  
+  origin: "https://doctor-appointment-booking-mern.netlify.app",
 };
 
 // database
