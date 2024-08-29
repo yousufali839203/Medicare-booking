@@ -18,6 +18,18 @@ const corsOptions = {
   origin: true,
 };
 
+// database
+mongoose.set("strictQuery", false);
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URL, {});
+
+    console.log("MongoDB database connected");
+  } catch (err) {
+    console.error("MongoDB database connection failed", err);
+  }
+};
+
 // middleware
 app.use(cors(corsOptions)); // Move this line up
 app.use(express.json());
@@ -32,21 +44,6 @@ app.use("/api/v1/test", testRoute);
 app.get("/", (req, res) => {
   res.send("Api is working");
 });
-
-// database
-mongoose.set("strictQuery", false);
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    console.log("MongoDB database connected");
-  } catch (err) {
-    console.error("MongoDB database connection failed", err);
-  }
-};
 
 app.listen(port, () => {
   connectDB();
